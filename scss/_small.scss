@@ -1,0 +1,203 @@
+/* Prevent adjustments of font size after orientation changes.  */
+html {
+    -moz-text-size-adjust: none;
+    -webkit-text-size-adjust: none;
+    text-size-adjust: none;
+    height: 100%;
+}
+
+/*---- apply a natural box layout model to all elements -------*/
+* {
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+	font-family: $defaultFont;
+	font-size: 16px;
+	font-weight: $lightWeight;
+    min-width: 320px;
+}
+
+
+/* navigation stuff */
+nav {
+    
+    background-color: $menuColor;
+ 
+
+}
+    
+
+nav button {
+    position: relative;
+   height: 44px;
+   width: 44px;
+   background: none;
+   border: none;
+   .line {
+    position: absolute;
+    height:2px;
+    width: 60%;
+    left: 20%;
+    background-color: white;
+    transition: all .3s
+   
+    
+   }// end line
+   .top{top: 29%;}
+   .middle{top: 48%;}
+   .bottom{top: 67%;}
+}// end button
+
+#hamburgerBtn.open {
+    .top{
+        transform: rotate(45deg);
+        top: 45%;
+    }
+    .middle, .bottom {
+        transform: rotate(-45deg);
+        top: 48%;
+    }
+} // end open
+
+nav{
+    
+    ul { 
+        display: none;
+        margin: 0;
+        padding: 0;
+    }
+    ul li {
+        list-style-type: none;
+    }
+ul li.active a{background-color: rgba(0,0,0,0.25);}
+ul li a {
+    display: block;
+    padding: .75rem 2vw;
+    font-size: 1.1rem;
+    color: white;
+    text-decoration: none;
+    border-top: 1px solid rgba(0,0,0,.2);
+}
+ul li a:hover {
+    background-color: rgba(0,0,0,.5);
+}
+ul.open {display: block}
+}
+
+
+
+
+
+
+   
+
+
+
+
+
+.hero {
+    position: relative;
+    video {
+        width: 100%;
+        height: auto;
+    }
+
+    div{ 
+        position:absolute;
+        top: 0px;
+        left: 0px;
+        right: 0;
+        color: white;
+        background: linear-gradient(90deg, rgba(0,0,0,.5) 0%, rgba(0,0,0,0.2) 40%);
+        padding: 10px;
+
+        h3{text-shadow: 0 0 2px black;}
+        p{text-shadow: 0 0 2px black;}
+     }
+
+} // end hero
+
+//main slogan
+#mainWrapper {
+    
+h1 { color: $menuColor;
+}
+
+h2 {
+    color: $menuColor;
+    font-weight: 300;
+}
+
+}
+
+/* The flip card container - set the width and height to whatever you want. We have added the border property to demonstrate that the flip itself goes out of the box on hover (remove perspective if you don't want the 3D effect */
+.flip-card {
+    width: 100%; 
+    margin:  auto; /* Center align */
+    width: 300px;
+    height: 200px;
+    border: 1px solid #f1f1f1;
+    perspective: 1000px; /* Remove this if you don't want the 3D effect */
+  }
+  
+  /* This container is needed to position the front and back side */
+  .flip-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+  }
+  
+  /* Do an horizontal flip when you move the mouse over the flip box container */
+  .flip-card:hover .flip-card-inner {
+    transform: rotateY(180deg);
+  }
+  
+  /* Position the front and back side */
+  .flip-card-front, .flip-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden; /* Safari */
+    backface-visibility: hidden;
+  }
+  
+  /* Style the front side (fallback if image is missing) */
+  .flip-card-front {
+    background-color: #bbb;
+    color: black;
+  }
+  
+  /* Style the back side */
+  .flip-card-back {
+    background-color: dodgerblue;
+    color: white;
+    transform: rotateY(180deg);
+  }
+
+// begin the footer
+#footerWrapper {
+    grid-row-start: 3;
+    background: $primaryColor;
+    color: white;
+}
+footer {
+    padding: 0.5rem $gutter;
+    
+
+
+  
+       
+    p.legal {
+        margin: 0;
+        font-weight: $lightWeight;
+        text-align: center;
+    }
+}

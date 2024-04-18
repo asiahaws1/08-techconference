@@ -1,0 +1,54 @@
+header, main {
+    max-width: 1240px;
+    margin: auto;
+}
+
+
+
+header {
+    grid-template-columns:  auto auto;
+    border-bottom: 1px solid #eee;
+}
+
+
+
+
+
+/* nav stuff */
+nav {
+    button{display: none;}
+
+    justify-self: end;
+
+    ul, ul.open {
+        position: relative;
+        display: flex;
+
+        justify-content: left;
+
+        background-color: transparent;
+        width: auto;
+    } // end ul  
+
+
+    ul li {border: none;}
+
+    ul li a {
+        border-radius: 0;
+        padding: .5rem 1rem;
+        margin-left: .2rem;
+        transition: all .5s ease;
+
+    } // end anchor
+
+    ul li a:hover {
+        background-color: #eee;
+        color: #333!important;
+    }
+
+    ul li.active a {
+        color: white;
+    }
+
+} // end nav
+
